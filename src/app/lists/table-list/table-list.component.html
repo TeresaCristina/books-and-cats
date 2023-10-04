@@ -10,7 +10,7 @@
     </td>
   </ng-container>
   <ng-container matColumnDef="expand">
-    <th mat-header-cell *matHeaderCellDef aria-label="row actions">Description&nbsp;</th>
+    <th mat-header-cell *matHeaderCellDef aria-label="row actions"></th>
     <td mat-cell *matCellDef="let element">
       <button mat-icon-button aria-label="expand row" (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()">
         <mat-icon *ngIf="expandedElement !== element">keyboard_arrow_down</mat-icon>
@@ -32,10 +32,12 @@
             </div>
             <div class="column-expanded" style="background-color:#bbb;">
               <h2>Column 2</h2>
+              <img src="{{element.InesIcon}}" width="25%">'
               <p>{{element.Review_One}}</p>
             </div>
             <div class="column-expanded" style="background-color:#ccc;">
               <h2>Column 3</h2>
+              <img src="{{element.TeresaIcon}}" width="25%">'
               <p>{{element.Review_Two}}</p>
             </div>
           </div> 
