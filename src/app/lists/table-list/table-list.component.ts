@@ -4,18 +4,17 @@ import { HttpClient } from '@angular/common/http';
 
 import * as countriesData from '../../../assets/data/countries.json';
 import * as booksWorld from '../../../assets/data/booksWorld.json';
-import * as pawReviews from '../../../assets/data/pawsReviews.json';
-
 
 declare const apiBook: string;
 declare const apiFlag: string;
 declare const InesIcon: string;
 declare const TeresaIcon: string;
+declare var pawReview: any;
 
 const ELEMENT_DATA: BookElement[] = [];
 const countries: any = countriesData;
 const books: any = booksWorld;
-const paw: any = pawReviews;
+
 
 export interface BookElement {
   Country: string;
@@ -30,7 +29,6 @@ export interface BookElement {
 }
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   selector: 'app-table-list',
   templateUrl: './table-list.component.html',
   styleUrls: ['./table-list.component.css'],
@@ -52,20 +50,14 @@ export class TableListComponent implements OnInit {
   constructor(private http: HttpClient){}
 
   ngOnInit(): void {
-    for(let i = 0; i < 3; i++){
-      var sizePaw = '"10%">';
+    for(let i = 0; i < 5; i++){
       var sizeFlag = '.png" width="25%">';
       var hover = '<img title="'; 
       var src ='" src="';
-      var pawReview =  '<img src="'  + paw[i].pawOne + '" width=' + sizePaw + 
-      '<img src="'  + paw[i].pawTwo + '" width=' + sizePaw +
-      '<img src="'  + paw[i].pawThree + '" width=' + sizePaw +
-      '<img src="'  + paw[i].pawFour + '" width=' + sizePaw +
-      '<img src="'  + paw[i].pawFive + '" width=' + sizePaw  
 
       ELEMENT_DATA[i] = {  
         'Country':  hover + countries[i].name + src + apiFlag + countries[i].code + sizeFlag,
-        'Review': pawReview ,
+        'Review': pawReview(i) ,
         'Book': books[i].title,
         'Author': books[i].author,
         'Description': "",

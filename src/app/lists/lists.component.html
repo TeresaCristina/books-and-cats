@@ -1,11 +1,11 @@
 
     <div class="container">
 
-<mat-tab-group>
-    <mat-tab >
-      <ng-template mat-tab-label>
+<mat-tab-group >
+    <mat-tab aria-label="completed" label="Completed">
+      <ng-template  mat-tab-label>
 
-        <img src="../../assets/img/ecology-book.png" width="5%">&nbsp;&nbsp;&nbsp;READ AROUND THE WORLD
+        <img class="png-icon example-tab-icon" src="../../assets/img/ecology-book.png" width="5%">&nbsp;&nbsp;&nbsp;READ AROUND THE WORLD
   
       </ng-template>
       <app-table-list></app-table-list>
@@ -13,14 +13,14 @@
   
     <mat-tab>
       <ng-template mat-tab-label>
-        <img src="../../assets/img/poirot.png" width="5%">&nbsp;&nbsp;&nbsp;THE LITTLE GREY CELLS
+        <img class="png-icon" src="../../assets/img/poirot.png" width="5%">&nbsp;&nbsp;&nbsp;THE LITTLE GREY CELLS
       </ng-template>
-      <app-table-list></app-table-list>
+      <app-table-list-poirot></app-table-list-poirot>
     </mat-tab>
 
     <mat-tab>
       <ng-template mat-tab-label>
-        <img src="../../assets/img/poirot.png" width="5%">&nbsp;&nbsp;&nbsp;HORROR IN TERRAS TUPINIQUINS
+        <img class="png-icon" src="../../assets/img/blood.png" width="5%">&nbsp;&nbsp;&nbsp;HORROR TUPINIQUIM
       </ng-template>
       <app-table-list></app-table-list>
     </mat-tab>

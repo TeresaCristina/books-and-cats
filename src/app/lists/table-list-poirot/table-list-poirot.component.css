@@ -1,0 +1,94 @@
+table {
+    width: 100%;
+  }
+  
+  tr.example-detail-row {
+    height: 0;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+  }
+  
+  .example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .example-element-description {
+    padding: 16px;
+  }
+  
+  .example-element-description-attribution {
+    opacity: 0.5;
+  }
+  
+
+  .mat-column-Book {
+    max-width: 20% !important;
+    min-width: 20% !important;
+ }
+ .mat-column-Author {
+  max-width: 20% !important;
+  min-width: 20% !important;
+}
+.mat-column-Review {
+  max-width: 300px !important;
+  min-width: 300px !important;
+}
+
+.mat-column-Country {
+  max-width: 20% !important;
+  min-width: 20% !important;
+}
+
+
+
+.column-expanded {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: white;
+ 
+}
+
+/* Clear floats after the columns */
+.row-expanded:after {
+  content: "";
+  display: table;
+  clear: both;
+  box-sizing: border-box;
+  background: white;
+}
+
+
+@media screen and (max-width: 600px) {
+  .column-expanded {
+    background: white;
+    width: 100%;
+  }
+}

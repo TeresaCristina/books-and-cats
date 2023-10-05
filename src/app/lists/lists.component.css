@@ -1,15 +1,45 @@
 
 
-.example-tab-icon {
-    margin-right: 8px;
-  }
-
   .png-icon{
-    margin: 5px auto auto;
-    padding: 0;
     display: inline-block;
-    background-repeat: no-repeat no-repeat;
     pointer-events: none;
+    width: 40px !important;
 }
 
+/* Styles for tab labels */
+.mat-tab-label {
+  min-width: 25px !important;
+  padding: 5px;
+  background-color: transparent;
+  color: red;
+  font-weight: 700;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+  min-width: 25px !important;
+  padding: 5px;
+  background-color: transparent;
+  color: red;
+  font-weight: 700;
+}
+
+/* Styles for the ink bar */
+.tab-my-color {
+  background: green;
+}
+
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+  color:red;
+  background-color: green;
+  }
+  
+  /* ink bar */
+  ::ng-deep .mat-ink-bar {
+  background-color: var(--primary-color,#1F89CE) !important;
+  }
+
+  .mat-tab-label {
+    background-color: #424242;
+}
 
