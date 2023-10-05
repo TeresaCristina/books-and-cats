@@ -6,6 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {NgFor, NgIf} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -68,7 +69,9 @@ import { TableListPoirotComponent } from './lists/table-list-poirot/table-list-p
     BrowserAnimationsModule,
     MatTableModule,
     MatButtonModule,
-    NgFor, NgIf
+    NgFor, 
+    NgIf,		
+		HttpClientModule // adding it in the imports
   ],
   providers: [],
   bootstrap: [AppComponent]

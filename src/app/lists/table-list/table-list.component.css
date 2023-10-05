@@ -72,6 +72,7 @@ table {
   width: 33.33%;
   padding: 10px;
   box-sizing: border-box;
+  background: white;
  
 }
 
@@ -81,11 +82,13 @@ table {
   display: table;
   clear: both;
   box-sizing: border-box;
+  background: white;
 }
 
 
 @media screen and (max-width: 600px) {
   .column-expanded {
+    background: white;
     width: 100%;
   }
 }

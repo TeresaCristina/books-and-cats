@@ -1,21 +1,33 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
+
 import * as countriesData from '../../../assets/data/countries.json';
 import * as booksWorld from '../../../assets/data/booksWorld.json';
 import * as pawReviews from '../../../assets/data/pawsReviews.json';
+
 
 declare const apiBook: string;
 declare const apiFlag: string;
 declare const InesIcon: string;
 declare const TeresaIcon: string;
-declare const fullPaw: string;
-declare const emptyPaw: string;
-declare const halfPaw: string;
 
 const ELEMENT_DATA: BookElement[] = [];
 const countries: any = countriesData;
 const books: any = booksWorld;
 const paw: any = pawReviews;
+
+export interface BookElement {
+  Country: string;
+  Review: string;
+  Book: string;
+  Author: string;
+  Description: string;
+  InesIcon: string;
+  TeresaIcon: string;
+  Review_One: string;
+  Review_Two: string;
+}
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -37,58 +49,35 @@ export class TableListComponent implements OnInit {
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement!: BookElement | null;
 
-  constructor() { }
+  constructor(private http: HttpClient){}
 
   ngOnInit(): void {
-    for(let i=0; i < 2;i++){
-      var pawReview =  '<img src="'  + paw[i].pawOne + '" width="5%">' + 
-      '<img src="'  + paw[i].pawTwo + '" width="5%">' + 
-      '<img src="'  + paw[i].pawThree + '" width="5%">' +
-      '<img src="'  + paw[i].pawFour + '" width="5%">' +
-      '<img src="'  + paw[i].pawFive + '" width="5%">' 
-       
-      ELEMENT_DATA[i] = {
-        
+    for(let i = 0; i < 3; i++){
+      var sizePaw = '"10%">';
+      var sizeFlag = '.png" width="25%">';
+      var hover = '<img title="'; 
+      var src ='" src="';
+      var pawReview =  '<img src="'  + paw[i].pawOne + '" width=' + sizePaw + 
+      '<img src="'  + paw[i].pawTwo + '" width=' + sizePaw +
+      '<img src="'  + paw[i].pawThree + '" width=' + sizePaw +
+      '<img src="'  + paw[i].pawFour + '" width=' + sizePaw +
+      '<img src="'  + paw[i].pawFive + '" width=' + sizePaw  
+
+      ELEMENT_DATA[i] = {  
         'Country':  hover + countries[i].name + src + apiFlag + countries[i].code + sizeFlag,
-        'Review':  pawReview ,
+        'Review': pawReview ,
         'Book': books[i].title,
         'Author': books[i].author,
-        'Description': apiBook + booksId[i],
-        'TeresaIcon': "../../.." + TeresaIcon, 
+        'Description': "",
+        'TeresaIcon':"../../.." + TeresaIcon,  
         'InesIcon': "../../.." + InesIcon,
-        'Review_One': books[i].review_one,
+        'Review_One':books[i].review_one,
         'Review_Two': books[i].review_two
       };
+      
+      this.http.get(apiBook + books[i].bookID + '.json').subscribe( (data: any)=>{
+        ELEMENT_DATA[i]['Description'] = data.description.value
+      })
     }
   }
-
 }
-
-export interface BookElement {
-  Country: string;
-  Review: string;
-  Book: string;
-  Author: string;
-  Description: string;
-  InesIcon: string;
-  TeresaIcon: string;
-  Review_One: string;
-  Review_Two: string;
-}
-
-var sizeFlag = '.png" width="25%">';
-var hover = '<img title="'; 
-var src ='" src="';
-
-
-
-
-
-const booksId = [
-  "OL15611821W.json",
-  "OL19980028W.json",
-];
-
-
-
-
