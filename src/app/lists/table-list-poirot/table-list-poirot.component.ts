@@ -48,7 +48,7 @@ export class TableListPoirotComponent {
   constructor(private http: HttpClient){}
 
   ngOnInit(): void {
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < 193; i++){
       var sizeFlag = '.png" width="25%">';
       var hover = '<img title="'; 
       var src ='" src="';

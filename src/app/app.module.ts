@@ -8,6 +8,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {NgFor, NgIf} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 
+import {MatDividerModule} from '@angular/material/divider';
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -71,7 +74,9 @@ import { TableListPoirotComponent } from './lists/table-list-poirot/table-list-p
     MatButtonModule,
     NgFor, 
     NgIf,		
-		HttpClientModule // adding it in the imports
+		HttpClientModule,
+    MatDividerModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,45 +1,31 @@
-
-
-  .png-icon{
-    display: inline-block;
-    pointer-events: none;
-    width: 40px !important;
+section {
+  display: table;
 }
 
-/* Styles for tab labels */
-.mat-tab-label {
-  min-width: 25px !important;
-  padding: 5px;
-  background-color: transparent;
-  color: red;
-  font-weight: 700;
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
 }
 
-/* Styles for the active tab label */
-.mat-tab-label.mat-tab-label-active {
-  min-width: 25px !important;
-  padding: 5px;
-  background-color: transparent;
-  color: red;
-  font-weight: 700;
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
 }
 
-/* Styles for the ink bar */
-.tab-my-color {
-  background: green;
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
 }
 
-::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
-  color:red;
-  background-color: green;
-  }
-  
-  /* ink bar */
-  ::ng-deep .mat-ink-bar {
-  background-color: var(--primary-color,#1F89CE) !important;
-  }
-
-  .mat-tab-label {
-    background-color: #424242;
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}

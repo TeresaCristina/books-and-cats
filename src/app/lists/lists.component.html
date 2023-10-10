@@ -1,34 +1,43 @@
-
-    <div class="container">
-
-<mat-tab-group >
-    <mat-tab aria-label="completed" label="Completed">
-      <ng-template  mat-tab-label>
-
-        <img class="png-icon example-tab-icon" src="../../assets/img/ecology-book.png" width="5%">&nbsp;&nbsp;&nbsp;READ AROUND THE WORLD
-  
-      </ng-template>
-      <app-table-list></app-table-list>
-    </mat-tab>
-  
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <img class="png-icon" src="../../assets/img/poirot.png" width="5%">&nbsp;&nbsp;&nbsp;THE LITTLE GREY CELLS
-      </ng-template>
-      <app-table-list-poirot></app-table-list-poirot>
-    </mat-tab>
-
-    <mat-tab>
-      <ng-template mat-tab-label>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="h3">Some great intro here</h2>
+      <p class="text-big">Place a nice <strong>introduction</strong> here <strong>to catch reader's attention</strong>.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderi.</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="example-button-row">
+    <button mat-raised-button>
+      <a routerLink="/lists/table-list" routerLinkActive="active" class="nav-link">
+        <img class="png-icon example-tab-icon" src="../../assets/img/ecology-book.png"
+          width="5%">&nbsp;&nbsp;&nbsp;AROUND THE WORLD
+      </a>
+    </button>
+  </div>
+  <div class="example-button-row">
+    <button mat-raised-button>
+      <a routerLink="/lists/table-list-poirot" routerLinkActive="active" class="nav-link">
+        <img class="png-icon" src="../../assets/img/poirot.png" width="5%">&nbsp;&nbsp;&nbsp;LITTLE GREY CELLS
+      </a>
+    </button>
+  </div>
+  <div class="example-button-row">
+    <button mat-raised-button>
+      <a href="https://www.google.com/" target="_blank">
         <img class="png-icon" src="../../assets/img/blood.png" width="5%">&nbsp;&nbsp;&nbsp;HORROR TUPINIQUIM
-      </ng-template>
-      <app-table-list></app-table-list>
-    </mat-tab>
-   
-   
+      </a>
+    </button>
+  </div>
+  <div class="example-button-row">
+    <button mat-raised-button>
+      <a href="https://www.google.com/" target="_blank">
+        <img class="png-icon" src="../../assets/img/blood.png" width="5%">&nbsp;&nbsp;&nbsp;HORROR TUPINIQUIM
+      </a>
+    </button>
+  </div>
 
-
-
-  </mat-tab-group>
-  
 </div>

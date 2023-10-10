@@ -12,6 +12,8 @@ import { EditPostComponent } from './admin/edit-post/edit-post.component';
 import { NewPostComponent } from './admin/new-post/new-post.component';
 import { ListsComponent } from './lists/lists.component';
 import { AboutComponent } from './about/about.component';
+import { TableListComponent } from './lists/table-list/table-list.component';
+import { TableListPoirotComponent } from './lists/table-list-poirot/table-list-poirot.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'post/:id', component: PostComponent },
   { path: 'admin', component: PostsTableComponent },
+  { path: 'lists/table-list', component: TableListComponent },
+  { path: 'lists/table-list-poirot', component: TableListPoirotComponent},
   { path:'lists', component: ListsComponent},
   { path: 'admin/newPost', component: NewPostComponent},
   { path: 'admin/post/:id', component: EditPostComponent },
